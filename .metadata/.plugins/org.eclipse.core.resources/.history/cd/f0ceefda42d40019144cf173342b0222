@@ -1,0 +1,125 @@
+import static org.junit.Assert.assertEquals;
+import java.util.concurrent.TimeUnit;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+public class PrubaAutomation {
+	// Variables
+	private WebDriver driver;
+	By Registro = By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr/td[2]/a");
+	By Nombre = By.name("firstName");
+	By Apeido = By.name("lastName");
+	By Celular = By.name("phone");
+	By Correo = By.id("userName");
+	By Direccion1 = By.name("address1");
+	By Direccion2 = By.name("address2");
+	By Ciudad = By.name("city");
+	By Estado = By.name("state");
+	By CodgioPostal = By.name("postalCode");
+	By Pais = By.name("country");
+	By NombreLogin = By.id("email");
+	By Contraseña1 = By.name("password");
+	By Contraseña2 = By.name("confirmPassword");
+	By Submit = By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[18]/td/input");
+	
+	@Before
+	public void setUp() {
+		
+		System.setProperty("webdriver.chrome.driver", "./src/test/resources/ChromeDriver/chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("http://newtours.demoaut.com/");
+		
+		
+	}
+	@Test
+	
+	public void Registro() throws InterruptedException {
+		
+		Thread.sleep(2000);
+		driver.findElement(Registro).click();
+		Thread.sleep(2000);
+		//WebElement Espera;
+		//Espera =  wait.until(ExpectedConditions.visibilityOfElementLocated(Registro));
+		driver.findElement(Nombre).sendKeys("Ricardo");
+		//Thread.sleep(2000);
+		driver.findElement(Apeido).sendKeys("Ovalles");
+		//Thread.sleep(2000);
+		driver.findElement(Celular).sendKeys("6671452381");
+		//Thread.sleep(2000);
+		driver.findElement(Correo).sendKeys("riicardo.ovalles@gmail.com");
+		//Thread.sleep(2000);
+		driver.findElement(Direccion1).sendKeys("Tulipan 870");
+		//Thread.sleep(2000);
+		driver.findElement(Direccion2).sendKeys("Ciudad de los niños");
+		//Thread.sleep(2000);
+		driver.findElement(Ciudad).sendKeys("Zapopan");
+		//Thread.sleep(2000);
+		driver.findElement(Estado).sendKeys("Jalisco");
+		//Thread.sleep(2000);
+		driver.findElement(CodgioPostal).sendKeys("45040");
+		//Thread.sleep(2000);
+		//driver.findElement(Pais).sendKeys("Ricardo");
+		//Thread.sleep(2000);
+		driver.findElement(NombreLogin).sendKeys("Ricardo");
+		//Thread.sleep(2000);
+		driver.findElement(Contraseña1).sendKeys("prueba123");
+		//Thread.sleep(2000);
+		driver.findElement(Contraseña2).sendKeys("prueba123");
+		//Thread.sleep(2000);
+		driver.findElement(Submit).click();
+	}
+		/*
+		Elemento1.click();
+		
+		//WebElement Elemento2 = driver.findElement(By.xpath("//*[@id=\"login-page\"]/p[1]/input"));
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		//Elemento2.click();
+		WebElement txtname = driver.findElement(By.name("login.username"));
+		txtname.click();
+		txtname.sendKeys("testuser@example.commm");
+		Thread.sleep(2000);
+		WebElement txtname2 = driver.findElement(By.name("login.password"));
+		txtname2.click();
+		txtname2.sendKeys("test123");
+		Thread.sleep(2000);
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(5000);
+		WebElement Elemento2 = driver.findElement(By.xpath("//*[@id=\"login-page\"]/p[3]/button[1]"));
+		Thread.sleep(2000);
+		
+		Elemento2.click();
+		//WebElement Elemento3 = driver.findElement(By.xpath("//*[@id=\"login-page\"]/p[2]/input"));
+		//Thread.sleep(2000);
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		//Elemento3.click();
+		//Elemento1.sendKeys("Gmail");
+		//Elemento1.submit();
+		//Thread.sleep(3000);
+		//WebElement txtname = driver.findElement(By.id("firstName"));
+		//txtname.click();
+		//txtname.sendKeys("Mario");
+		//WebElement txtname2 = driver.findElement(By.id("lastName"));
+		//txtname2.click();
+		//txtname2.sendKeys("Bros");
+		//WebElement txtname3 = driver.findElement(By.id("username"));
+		//txtname3.click();
+		//txtname3.sendKeys("MarioBrosmasmamamamamlkso");
+		
+
+		
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		//assertEquals("Gmail", driver.getTitle());
+	}
+	*/
+	@After
+	public void tearDown() {
+		//driver.quit();
+	}
+}
